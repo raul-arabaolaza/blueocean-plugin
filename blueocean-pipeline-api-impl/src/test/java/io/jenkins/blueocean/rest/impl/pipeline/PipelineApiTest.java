@@ -149,6 +149,7 @@ public class PipelineApiTest extends PipelineBaseTest {
             "}"));
 
         WorkflowRun b1 = job1.scheduleBuild2(0).waitForStart();
+        Thread.sleep(5000);
         for (int i = 0; i < 10; i++) {
             b1.doStop();
             if (b1.getResult() != null) {
